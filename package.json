@@ -1,0 +1,33 @@
+{
+  "name": "max_command",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:homepage": "npx cucumber-js --require-module ts-node/register --require src/hooks/**/*.ts --require tests/e2e/steps/**/*.ts tests/e2e/features/01_Max_Homepage.feature --tags @Max_CommandHomepage.feature",
+    "test:homepage-load": "npx cucumber-js --require-module ts-node/register --require src/hooks/**/*.ts --require tests/e2e/steps/**/*.ts tests/e2e/features/**/*.feature --tags @HomepageLoad",
+    "test:bdd": "node -e \"require('fs').mkdirSync('test-results/cucumber-json',{recursive:true})\" && npx cucumber-js --require-module ts-node/register --require src/hooks/**/*.ts --require tests/e2e/steps/**/*.ts --format progress-bar --format json:test-results/cucumber-json/cucumber-report.json tests/e2e/features/**/*.feature",
+    "test:add-well": "npx cucumber-js --require-module ts-node/register --require src/hooks/**/*.ts --require tests/e2e/steps/**/*.ts tests/e2e/features/**/*.feature --tags @AddWelltodashboard",
+    "test:headed": "npx cucumber-js --require-module ts-node/register --require src/hooks/**/*.ts --require tests/e2e/steps/**/*.ts tests/e2e/features/**/*.feature",
+    "test:debug": "node --inspect-brk node_modules/.bin/cucumber-js --require-module ts-node/register --require src/hooks/**/*.ts --require tests/e2e/steps/**/*.ts tests/e2e/features/**/*.feature",
+    "report": "node scripts/generate-report.js",
+    "test:bdd:report": "npm run test:bdd && npm run report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.8.2",
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0",
+    "chai": "^6.2.2",
+    "multiple-cucumber-html-reporter": "^3.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
