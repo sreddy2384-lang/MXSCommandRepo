@@ -9,6 +9,7 @@
     "test:homepage-load": "npx cucumber-js --require-module ts-node/register --require src/hooks/**/*.ts --require tests/e2e/steps/**/*.ts tests/e2e/features/**/*.feature --tags @HomepageLoad",
     "test:bdd": "node -e \"require('fs').mkdirSync('test-results/cucumber-json',{recursive:true})\" && npx cucumber-js --require-module ts-node/register --require src/hooks/**/*.ts --require tests/e2e/steps/**/*.ts --format progress-bar --format json:test-results/cucumber-json/cucumber-report.json tests/e2e/features/**/*.feature",
     "test:add-well": "npx cucumber-js --require-module ts-node/register --require src/hooks/**/*.ts --require tests/e2e/steps/**/*.ts tests/e2e/features/**/*.feature --tags @AddWelltodashboard",
+    "test:dashboard": "npx cucumber-js --require-module ts-node/register --require src/hooks/**/*.ts --require tests/e2e/steps/**/*.ts tests/e2e/features/scenarios/02_Dashboard.feature",
     "test:headed": "npx cucumber-js --require-module ts-node/register --require src/hooks/**/*.ts --require tests/e2e/steps/**/*.ts tests/e2e/features/**/*.feature",
     "test:debug": "node --inspect-brk node_modules/.bin/cucumber-js --require-module ts-node/register --require src/hooks/**/*.ts --require tests/e2e/steps/**/*.ts tests/e2e/features/**/*.feature",
     "report": "node scripts/generate-report.js",
