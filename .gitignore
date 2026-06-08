@@ -5,6 +5,7 @@ node_modules/
 
 # Authentication state
 auth-state.json
+runtime-info/api-token.json
 
 # Test results and reports
 test-results/
